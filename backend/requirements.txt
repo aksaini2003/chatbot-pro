@@ -5,13 +5,13 @@ passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
 sqlalchemy==2.0.23
 alembic==1.12.1
-pydantic>2
+pydantic>=2.5.0
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
-langchain
-langchain-core
-langchain-community
-langchain-openai==0.0.2
+langchain>=0.1.0
+langchain-core>=0.1.45
+langchain-community>=0.0.13
+langchain-openai>=0.1.0  # UPDATED: More stable version
 langchain-groq==0.1.4
 langchain-google-genai==1.0.1
 langchain-nvidia-ai-endpoints==0.1.0
@@ -22,7 +22,5 @@ requests==2.31.0
 PyPDF2==3.0.1
 pypdf==3.17.0
 aiofiles==23.2.1
-tavily-python==0.3.1
+tavily-python>=0.3.1
 psycopg2-binary
-
-
