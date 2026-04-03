@@ -16,7 +16,7 @@ langchain-groq==0.1.4
 langchain-google-genai==1.0.1
 langchain-nvidia-ai-endpoints==0.1.0
 langgraph==0.0.26
-faiss-cpu==1.8.0
+faiss-cpu
 ddgs==9.10.0
 requests==2.31.0
 PyPDF2==3.0.1
