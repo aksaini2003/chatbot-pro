@@ -6,7 +6,7 @@ python-multipart==0.0.6
 sqlalchemy>=2.0.35
 alembic>=1.12.1
 pydantic>=2.5.0
-deep-translator=1.9.1
+deep-translator==1.9.1
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
 langchain>=0.1.0
