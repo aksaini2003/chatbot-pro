@@ -1,5 +1,18 @@
 {
-    "buildCommand": "cd frontend && npm install && chmod +x ./node_modules/.bin/react-scripts && npm run build",
-    "outputDirectory": "frontend/build",
-    "framework": "create-react-app"
+    "version": 2,
+    "builds": [
+        {
+            "src": "frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
 }
