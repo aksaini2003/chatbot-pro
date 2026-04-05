@@ -16,7 +16,7 @@ langchain-openai>=0.1.0
 langchain-groq==0.1.4
 langchain-google-genai==1.0.1
 langchain-nvidia-ai-endpoints==0.1.0
-langgraph==0.0.26
+langgraph>=0.1.0
 faiss-cpu
 ddgs==9.10.0
 requests==2.31.0
