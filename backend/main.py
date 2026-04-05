@@ -22,14 +22,28 @@ from langgraph_backend import chatbot, ingest_pdf, thread_document_metadata, thr
 
 app = FastAPI(title="Production Chatbot API", version="1.0.0")
 
-# CORS middleware
+# CORS middleware setup for production and development
+CORS_ORIGINS = os.getenv("ALLOWED_ORIGINS", "").split(",") if os.getenv("ALLOWED_ORIGINS") else []
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
+
+# Collect all allowed origins
+origins = [
+    "http://localhost:3000",
+    "https://localhost:3000",
+    FRONTEND_URL.rstrip("/"),
+]
+# add the same frontend url with training slash just in case
+origins.append(f"{FRONTEND_URL.rstrip('/')}/")
+origins.extend([o.strip() for o in CORS_ORIGINS if o.strip()])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React frontend
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Create database tables on startup
 @app.on_event("startup")
@@ -481,4 +495,7 @@ async def chat(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Use PORT environment variable if available (required for Render)
+    port = int(os.getenv("PORT", "8000"))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+
