@@ -8,14 +8,15 @@ A premium, production-ready full-stack chatbot application built with React, Fas
 - **Personalized Welcome Screen**: Elegant landing state with animated user greetings and quick-action cards.
 - **Smart Onboarding**: Guided "Analyze PDF" flow that helps users upload documents before asking questions.
 - **Modern Interface**: Tailwind-powered design with glassmorphism effects, light/dark mode, and staggered enter animations.
-- **Real-time Interaction**: Streaming AI responses with visual indicators for tool execution (Search, Calculator, etc.).
+- **Real-time Interaction**: Streaming AI responses with visual indicators for tool execution (Search, Calculator, Translation, etc.).
 
 ### 🧠 Intelligent Core (LangGraph)
 - **Advanced RAG**: Specialized PDF ingestion (FAISS) with thread-aware retrieval.
 - **Multi-Tool Integration**:
   - **Tavily Search**: Advanced real-time web search.
   - **Financial Tools**: Real-time stock price lookup and currency conversion.
-  - **Utilities**: Calculator and real-time weather information.
+  - **Language Translation**: Real-time translation between 100+ languages (powered by Google Translate).
+  - **Utilities**: Calculator, real-time weather information, and current date/time access.
 - **Fallback Resilience**: Automatic LLM switching (Groq primary, NVIDIA fallback) ensures high availability.
 
 ### 🔐 Security & Reliability
